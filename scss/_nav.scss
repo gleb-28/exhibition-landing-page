@@ -1,0 +1,23 @@
+.nav {
+
+	&__list {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: rem(40);	
+	}
+
+	&__item {
+		white-space: nowrap;
+	}
+
+	&__link {
+		color: inherit;
+		transition: $hover;
+
+		@media (hover: hover) { 
+			&:hover {
+				color: $accent;
+		 	}
+		}
+	}
+}

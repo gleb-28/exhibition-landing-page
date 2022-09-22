@@ -1,0 +1,45 @@
+.quote-section {
+	position: relative;
+	background-color: #07565f;
+	z-index: -29;
+	
+	&__bg {
+		@extend %img-bg;
+		filter: brightness(44%);
+	}
+
+	&__body {
+		padding: rem(192) 0;
+
+		@media (max-width: $breakpoint375) {
+			padding: rem(96) 0;
+		}
+	}
+
+	&__quote {
+		font-size: 32px;
+		font-weight: 500;
+		max-width: rem(838);
+		margin-bottom: rem(36);
+
+		@media (max-width: $breakpoint576) {
+			font-size: 24px;	
+		}
+		@media (max-width: $breakpoint428) {
+			text-align: center;
+		}	
+	}
+
+	&__author {
+		display: block;
+		font-family: 'Comforter';
+		font-size: 64px;
+		line-height: 1;
+		text-align: right;
+
+		@media (max-width: $breakpoint576) {
+			font-size: 32px;	
+		}
+	}
+}
+

@@ -1,0 +1,136 @@
+.burger {
+	display: none;
+	position: relative;
+	border: none;
+	padding: 0;
+	width: $burger-width;
+	height: $burger-height;
+	color: $burger-color;
+	background-color: transparent;
+	z-index: 50;
+	cursor: pointer;
+}
+
+.burger::before, .burger::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	height: $burger-line-height;
+	background-color: currentColor;
+	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.burger::before {
+	top: 0;
+}
+
+.burger::after {
+	top: calc(100% - $burger-line-height);
+	}
+
+.burger__line {
+	position: absolute;
+	left: 0;
+	top: calc(50% - 0.15px);
+	width: 100%;
+	height: $burger-line-height;
+	background-color: currentColor;
+	transform: translateY(-50%);
+	transition: transform 0.3s ease-in-out;
+	z-index: 50;
+}
+
+.burger--active::before {
+	top: 50%;
+	transform: rotate(45deg);
+	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.burger--active::after {
+	top: 50%;
+	transform: rotate(-45deg);
+	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.burger--active .burger__line {
+ transform: scale(0);
+ transition: transform 0.3s ease-in-out;
+}
+
+
+.menu-overlay {
+  background-color: $menu-overlay-color;
+  overflow: scroll;
+  height: 100vh;
+  width: $menu-overlay-width;
+  left: 0;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  transform: translateX(-100%);
+  z-index: 28;
+  display: none;
+}
+
+.menu-overlay.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.background-overlay {
+  background-color: rgba(25, 25, 25, 0.5);
+  display: none;
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.4s ease;
+  position: fixed;
+}
+
+.background-overlay.bg-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu-overlay__menu{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu-overlay__list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.menu-overlay__item {
+	font-size: 30px;
+}
+
+.menu-overlay__link {
+	
+}
+
+
+@media (max-width : $burger-breakpoint) {
+	.burger{
+		display: block;
+	}
+	.menu-overlay{
+		display: block;
+	}
+	.background-overlay {
+		display: block;
+	}
+	.hidden{
+	overflow: hidden;
+	}
+}	

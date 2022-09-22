@@ -1,0 +1,64 @@
+:root {
+    scroll-behavior: smooth;
+}
+
+::selection {
+	color: $primary;
+	background: $accent;
+}
+
+::placeholder {
+    color: $primary;
+    font-family: inherit;
+}
+
+body {
+	font-family: $main;
+	color: $primary;
+    line-height: 1.3;
+	font-weight: 400;
+	font-size: 20px;
+    min-height: 100%;
+	overflow-x: hidden;
+}
+
+.container{
+	max-width: calc($container-width + $container-padding);
+	padding: 0 $container-side-padding;
+	margin: 0 auto;
+	width: 100%;
+}
+
+h2 {
+	font-size: 60px;
+	line-height: 1.5;
+}
+
+.button {
+	display: inline-block;
+	font-size: 24px;
+	padding: 10px 20px;
+	color: $secondary;
+	background-color: $primary;
+	border-radius: 11px;
+	transition: $hover;
+
+	@media (hover: hover) { 
+		&:hover {
+			color: $primary;
+			background-color: $accent;
+		}
+	}
+
+}
+
+%img-bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -28;
+	object-fit: cover;
+  	object-position: center;
+}

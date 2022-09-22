@@ -1,0 +1,105 @@
+.footer {
+	background-color: #07565f;
+
+	&__body {
+		padding: rem(72) 0;
+	}
+
+	&__address {
+		margin-bottom: rem(42);
+
+		@media (max-width: $breakpoint428) {
+			font-size: 16px;	
+		}
+	}
+
+	&__address-link {
+		text-decoration: underline;
+		transition: $hover;
+
+		@media (hover: hover) { 
+			&:hover {
+				color: $accent;
+		  }
+		}
+	}
+
+	&__tel {
+		display: inline-block;
+		margin-bottom: rem(42);
+		transition: $hover;
+
+		@media (hover: hover) { 
+			&:hover {
+				color: $accent;
+		  }
+		}
+
+		@media (max-width: $breakpoint428) {
+			font-size: 16px;	
+		}
+	}
+
+	&__contats {
+	}
+}
+.contacts {
+	display: flex;
+	gap: rem(22);
+	margin-bottom: rem(42);
+
+	&__item {
+	}
+
+	&__link {
+
+		svg {
+			fill: $primary;
+			transition: $hover;
+
+			@media (hover: hover) { 
+				&:hover {
+					fill: $accent;
+		  		}
+			}
+		}
+
+		&--vk {
+		}
+
+		&--tg {
+		}
+	}
+}
+
+
+.site-authors {
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+
+	@media (max-width: $breakpoint428) {
+		text-align: center;
+	}
+
+	&__author {
+
+		&--designer {
+		}
+
+		&--developer {
+		}
+	}
+
+	&__link {
+		text-decoration: underline;
+		font-weight: 500;
+		transition: $hover;
+
+		@media (hover: hover) { 
+			&:hover {
+				color: $accent;
+		  }
+		}
+	}
+}
